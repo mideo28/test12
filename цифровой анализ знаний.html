@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цифровое оценивание в IT</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="12style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <h1>Цифровое <span>оценивание</span> в IT</h1>
+        <nav>
+            <a onclick="showSection('home')">Главная</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section id="home" class="active">
+    <div class="card hero">
+        <span class="tag">Проверка знаний</span>
+
+        <h2>Насколько хорошо ты разбираешься в IT?</h2>
+
+        <p>
+            Пройди тест из 10 вопросов и узнай свой уровень.
+            Вопросы проверяют знания веб-разработки,
+            JavaScript, баз данных, алгоритмов и безопасности.
+        </p>
+
+        <button class="btn" onclick="startTest(0)">
+            Начать тест
+        </button>
+    </div>
+</section>
+
+
+<section id="test">
+    <div class="card">
+
+        <div class="test-top">
+            <div class="progress-text" id="progressText">
+                Вопрос 1 из 10
+            </div>
+
+            <div class="timer" id="timer">
+                15:00
+            </div>
+        </div>
+
+        <div class="progress-bg">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="category" id="category"></div>
+
+        <div class="question" id="question"></div>
+
+        <div class="options" id="options"></div>
+
+        <div class="test-buttons">
+
+            <button
+                class="btn btn-ghost"
+                id="prev"
+                onclick="previousQuestion()">
+                Назад
+            </button>
+
+            <button
+                class="btn btn-danger"
+                onclick="openFinish()">
+                Завершить
+            </button>
+
+            <button
+                class="btn"
+                id="next"
+                onclick="nextQuestion()"
+                disabled>
+                Следующий вопрос
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section id="result">
+    <div class="card result">
+
+        <span class="tag">Результат оценивания</span>
+
+        <h2>Ваш результат</h2>
+
+        <div class="score" id="score"></div>
+
+        <div class="percent" id="percent"></div>
+
+        <div class="level" id="level"></div>
+
+        <div class="message" id="message"></div>
+
+        <div class="skills">
+            <h3>Анализ навыков</h3>
+            <div id="skillsContainer"></div>
+        </div>
+
+        <div class="mistakes" id="mistakes"></div>
+
+        <div class="result-buttons">
+
+            <button
+                class="btn"
+                onclick="restartCurrentTest()">
+                Пройти заново
+            </button>
+
+            <button
+                class="btn btn-ghost"
+                onclick="startOtherTest()">
+                Другой тест
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    Анализ знаний цифровых технологий
+</footer>
+
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <h3>Завершить тест?</h3>
+
+        <p id="modalText"></p>
+
+        <div class="modal-buttons">
+
+            <button
+                class="btn btn-ghost"
+                onclick="closeFinish()">
+                Продолжить
+            </button>
+
+            <button
+                class="btn btn-danger"
+                onclick="finishTest()">
+                Завершить
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js123.js"></script>
+
+</body>
+</html>
